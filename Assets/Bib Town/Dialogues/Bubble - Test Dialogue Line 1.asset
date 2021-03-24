@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223426214d19bd84e87106e2c7d625a3, type: 3}
+  m_Name: Bubble - Test Dialogue Line 1
+  m_EditorClassIdentifier: 
+  CharacterName: {fileID: 0}
+  isChoice: 0
+  dialogueText: Salut !
+  choice1Text: 
+  choice2Text: 
+  choiceConsequenceVariable: 

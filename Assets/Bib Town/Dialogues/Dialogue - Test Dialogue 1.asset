@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ac8f08766357e4bacde99f8ffafab8, type: 3}
+  m_Name: Dialogue - Test Dialogue 1
+  m_EditorClassIdentifier: 
+  dialogueBubbles:
+  - {fileID: 11400000, guid: ccc6a004faf5f3642a3e84ba8d181a0b, type: 2}
+  - {fileID: 11400000, guid: 4854556c0595a4043bd26747699ae34f, type: 2}
+  - {fileID: 11400000, guid: df0b17ad40ad947429700bf2421e74fe, type: 2}
+  - {fileID: 11400000, guid: b6b0b48331c73b64eaf946ab6670701e, type: 2}
+  - {fileID: 11400000, guid: 6a78f574c9c5ece49bbb6f41bd3043f2, type: 2}
