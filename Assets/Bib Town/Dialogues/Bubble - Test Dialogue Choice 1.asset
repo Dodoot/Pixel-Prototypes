@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223426214d19bd84e87106e2c7d625a3, type: 3}
   m_Name: Bubble - Test Dialogue Choice 1
   m_EditorClassIdentifier: 
-  CharacterName: {fileID: 0}
+  CharacterNameSprite: {fileID: 21300000, guid: a91c8c880472d884087533d718555446,
+    type: 3}
   isChoice: 1
   dialogueText: 
   choice1Text: Super bien

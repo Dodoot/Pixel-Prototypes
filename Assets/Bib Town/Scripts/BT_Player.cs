@@ -124,6 +124,14 @@ public class BT_Player : MonoBehaviour
             myAnimator.SetBool("Walk " + walkDirection, true);
         }
 
+        if( Mathf.Pow(controlThrowHorizontal,2) + Mathf.Pow(controlThrowVertical, 2) > 1)
+        {
+            float smoothingRatio = Mathf.Sqrt( 1f / (Mathf.Pow(controlThrowHorizontal, 2) + Mathf.Pow(controlThrowVertical, 2)) );
+            Debug.Log(smoothingRatio);
+            playerVelocityX *= smoothingRatio;
+            playerVelocityY *= smoothingRatio;
+        }
+
         Vector2 playerVelocity = new Vector2(playerVelocityX, playerVelocityY);
         myRigidbody.velocity = playerVelocity;
     }

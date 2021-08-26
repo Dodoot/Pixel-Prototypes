@@ -5,10 +5,19 @@ using UnityEngine.UI;
 
 public class BT_DialogueManager : MonoBehaviour
 {
+    
     [SerializeField] float textSpeed = 5;
+
+    [Header("Sounds")]
+    [SerializeField] AudioClip[] dialogueSounds = null;
+    [SerializeField] float dialogueSoundsVolume = 0.2f;
+    [SerializeField] int dialogueSoundsEveryXLetters = 5;
+    [SerializeField] AudioClip dialogueConfirm = null;
+    [SerializeField] float dialogueConfirmVolum = 0.3f;
 
     [Header("UI")]
     [SerializeField] GameObject dialogueBubbleSprite = null;
+    [SerializeField] GameObject charaNameSprite = null;
     [SerializeField] GameObject arrowNext = null;
     [SerializeField] GameObject arrowChoice1 = null;
     [SerializeField] GameObject arrowChoice2 = null;
@@ -83,6 +92,11 @@ public class BT_DialogueManager : MonoBehaviour
 
     private void NextBubble()
     {
+        AudioSource.PlayClipAtPoint(
+            dialogueConfirm,
+            Camera.main.transform.position,
+            dialogueConfirmVolum);
+
         CleanBubbleUI();
 
         dialogueIndex += 1;
@@ -98,6 +112,7 @@ public class BT_DialogueManager : MonoBehaviour
 
     private void CleanBubbleUI()
     {
+        charaNameSprite.SetActive(false);
         arrowNext.SetActive(false);
         arrowChoice1.SetActive(false);
         arrowChoice2.SetActive(false);
@@ -109,6 +124,13 @@ public class BT_DialogueManager : MonoBehaviour
     private void ExecuteBubble()
     {
         BT_Bubble bubble = currentDialogue.dialogueBubbles[dialogueIndex];
+
+        if (bubble.CharacterNameSprite)
+        {
+            charaNameSprite.SetActive(true);
+            charaNameSprite.GetComponent<Image>().sprite = bubble.CharacterNameSprite;
+        }
+
         if (!bubble.isChoice)
         {
             textDialogue.text = "";
@@ -130,10 +152,36 @@ public class BT_DialogueManager : MonoBehaviour
 
     private IEnumerator TypeDialogueBubble(BT_Bubble bubble)
     {
+        float waitTime;
+        int i = dialogueSoundsEveryXLetters;
         foreach(char letter in bubble.dialogueText.ToCharArray())
         {
             textDialogue.text += letter;
-            yield return new WaitForSeconds(1f / textSpeed);
+
+            if(i == dialogueSoundsEveryXLetters)
+            {
+                AudioSource.PlayClipAtPoint(
+                    dialogueSounds[Random.Range(0, dialogueSounds.Length)], 
+                    Camera.main.transform.position, 
+                    dialogueSoundsVolume);
+                i = 0;
+            }
+            i++;
+
+            // could do a dict with special characters and associated wait times
+            if (letter == '\n')
+            {
+                waitTime = (5f / textSpeed);
+            }
+            else if (letter == '.')
+            {
+                waitTime = (10f / textSpeed);
+            }
+            else
+            {
+                waitTime = (1f / textSpeed);
+            }
+            yield return new WaitForSeconds(waitTime);
         }
         playerCanContinue = true;
         arrowNext.SetActive(true);

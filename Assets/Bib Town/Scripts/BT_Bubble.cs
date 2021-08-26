@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "BT_Bubble")]
 public class BT_Bubble : ScriptableObject
 {
-    [SerializeField] public Sprite CharacterName = null;
+    [SerializeField] public Sprite CharacterNameSprite = null;
 
     [SerializeField] public bool isChoice = false;
 

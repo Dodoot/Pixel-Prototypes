@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223426214d19bd84e87106e2c7d625a3, type: 3}
   m_Name: Bubble - Test Dialogue Line 2
   m_EditorClassIdentifier: 
-  CharacterName: {fileID: 0}
+  CharacterNameSprite: {fileID: 21300000, guid: ff9ec710ef3f9c149a87aad98f3386c2,
+    type: 3}
   isChoice: 0
   dialogueText: "Je teste les lignes trop longue pour voir si \xE7a passe \xE0 la
     ligne !"

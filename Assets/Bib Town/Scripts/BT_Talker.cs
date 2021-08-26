@@ -15,9 +15,9 @@ public class BT_Talker : MonoBehaviour
         if (myPlayer)
         {
             myPlayer.setCurrentTalker(this);
+            talkArrow.SetActive(true);
         }
 
-        talkArrow.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)

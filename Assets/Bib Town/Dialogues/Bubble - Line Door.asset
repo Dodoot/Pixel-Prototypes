@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 223426214d19bd84e87106e2c7d625a3, type: 3}
-  m_Name: Bubble - Test Dialogue Choice
+  m_Name: Bubble - Line Door
   m_EditorClassIdentifier: 
-  CharacterNameSprite: {fileID: 21300000, guid: a91c8c880472d884087533d718555446,
-    type: 3}
-  isChoice: 1
-  dialogueText: 
-  choice1Text: Ca fonctionne !
-  choice2Text: Non c'est nul.
+  CharacterNameSprite: {fileID: 0}
+  isChoice: 0
+  dialogueText: "C'est m\xEAme pas une vraie porte!"
+  choice1Text: 
+  choice2Text: 
   choiceConsequenceVariable: 
